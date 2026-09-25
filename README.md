@@ -1,237 +1,101 @@
-# Template for Capstone
-이 레파지토리는 학생들이 캡스톤 프로젝트 결과물을 위한 레파지토리 생성시에 참고할 내용들을 담고 있습니다.
-1. 레파지토리 생성
-2. 레파지토리 구성
-3. 레파지토리 제출 
-4. README.md 가이드라인
-5. README.md 작성팁
-
----
-
-## 1. 레파지토리 생성
-- [https://classroom.github.com/a/i3v_IYnd]
-- 위 Github Classroom 링크에 접속해 본인 조의 github 레파지토리를 생성하세요.
-
-<img width="1171" height="592" alt="image" src="https://github.com/user-attachments/assets/22919da2-dee5-4ca8-98f1-3dd63d7a6013" />
-
-
-- 레포지토리 생성 시 팀명은 `TEAM-{조 번호}` 형식으로 생성하세요.
-- 예를 들어, 2026년도 3조의 팀명은 `TEAM-03` 입니다.
-- 이 경우 `Capstone2026-team-03`이란 이름으로 레파지토리가 생성됩니다.
-
----
-
-## 2. 레파지토리 구성
-- 레파지토리 내에 README.md 파일 생성하고 아래의 가이드라인과 작성팁을 참고하여 README.md 파일을 작성하세요. (이 레파지토리의 SAMPLE_README.md 참조)
-- 레파지토리 내에 docs 디렉토리를 생성하고 docs 디렉토리 내에는 과제 수행 하면서 작성한 각종 보고서, 발표자료를 올려둡니다. (이 레파지토리의 docs 디렉토리 참조)
-- 그 밖에 레파지토리의 폴더 구성은 과제 결과물에 따라 자유롭게 구성하되 가급적 코드의 목적이나 기능에 따라 디렉토리를 나누어 구성하세요.
-
----
-
-## 3. 레파지토리 제출 
-
-- **`[주의]` 레파지토리 제출**은 해당 레파지토리의 ownership을 **학과 계정**으로 넘기는 것이므로 되돌릴 수 없습니다.
-- **레파지토리 제출** 전, 더 이상 수정 사항이 없는지 다시 한번 확인하세요.
-- github 레파지토리에서 Settings > General > Danger zone > Transfer 클릭
-  <img src="https://github.com/user-attachments/assets/cb2361d4-e07e-4b5d-9116-aa80dddd8a8b" alt="소유주 변경 경로" width="500" />
-  
-- [ Specify an organization or username ]에 'PNUCSE'를 입력하고 확인 메세지를 입력하세요.
-  <img src="https://github.com/user-attachments/assets/7c63955d-dcfe-4ac3-bdb6-7d2620575f3a" alt="소유주 변경" width="400" />
-
----
-
-## 4. README.md 가이드 라인
-- README 파일 작성시에 아래의 5가지 항목의 내용은 필수적으로 포함해야 합니다.
-- 아래의 항목이외에 프로젝트의 이해를 돕기 위한 내용을 추가해도 됩니다.
-- SAMPLE_README.md 이 단순한 형태의 예제이니 참고하세요.
-
-```markdown
 ### 1. 프로젝트 배경
-#### 1.1. 국내외 시장 현황 및 문제점
-> 시장 조사 및 기존 문제점 서술
 
-#### 1.2. 필요성과 기대효과
-> 왜 이 프로젝트가 필요한지, 기대되는 효과 등
+우리나라는 삼면이 바다로 둘러싸여 있으며 항만, 해수욕장, 연안 시설 등 넓은 해양·해안 영역에 대한 지속적인 감시가 요구된다. 특히 최근 소형 보트나 제트스키 등을 이용하여 해상으로 접근하거나 밀입국을 시도한 사례가 발생하면서, 기존의 선박뿐만 아니라 사람, 소형 수상기구, 드론 등 다양한 침투 가능 객체를 신속하게 탐지할 수 있는 감시 기술의 필요성이 증가하고 있다.
 
-### 2. 개발 목표
-#### 2.1. 목표 및 세부 내용
-> 전체적인 개발 목표, 주요 기능 및 기획 내용
+그러나 해양과 해안은 감시 범위가 넓고 관측 환경이 지속적으로 변화하기 때문에 영상 기반 감시에 어려움이 있다.따라서 영상 내 객체의 위치와 종류를 자동으로 식별하고, 탐지 결과를 관제자가 직관적으로 확인할 수 있도록 지원하는 AI 기반 객체 탐지 기술이 필요하다.
 
-#### 2.2. 기존 서비스 대비 차별성 
-> 유사 서비스 비교 및 차별점 부각
+### 2. 프로젝트 목표
 
-#### 2.3. 사회적 가치 도입 계획 
-> 프로젝트의 공공성, 지속 가능성, 환경 보호 등
-### 3. 시스템 설계
-#### 3.1. 시스템 구성도
-> 이미지 혹은 텍스트로 시스템 아키텍쳐 작성
->
-#### 3.2. 사용 기술
-> 프론트엔드, 백엔드, API 등 구체 기술 스택
+| 구분 | 세부 목표 |
+|---------|-----|
+| 객체 탐지 | YOLO26n으로 big, middle, small, drone, human의 위치와 클래스를 탐지한다 |
+| 함정 데이터 구축 | 해양경찰청 함정도감을 기준으로 대형·중형·소형 경비함정과 특수함정의 실제 자료를 수집한다. | 
+| 가상 데이터 구축 | Unity에서 드론과 사람을 다양한 거리·각도·기상 조건으로 생성하여 실제 데이터의 부족한 조건을 보완한다 |
+| 함정 세부 분류 확장 | big·middle·small로 탐지된 함정 Crop을 별도 분류 단계에 연결하여 세부 유형 분류로 확장한다 |
+| 환경 강건성 평가 | Clear, Cloudy, Rain, Fog, Night 조건의 장면을 구성하여 탐지 양상을 확인한다 |
+| 결과 시각화 | Bounding Box, 클래스명, 신뢰도와 세부 분류 결과를 표시하고 간단한 관제형 UI에서 영상을 확인할 수 있도록 한다 |
 
-### 4. 개발 결과
-#### 4.1. 전체 시스템 흐름도
-> 기능 흐름 설명 및 도식화 가능
->
-#### 4.2. 기능 설명 및 주요 기능 명세서
-> 주요 기능에 대한 상세 설명, 각 기능의 입력/출력 및 설명
->
-#### 4.3. 디렉토리 구조
->
-#### 4.4. 산업체 멘토링 의견 및 반영 사항
-> 멘토 피드백과 적용한 사례 정리
 
-### 5. 설치 및 실행 방법
->
-#### 5.1. 설치절차 및 실행 방법
-> 설치 명령어 및 준비 사항, 실행 명령어, 포트 정보 등
-#### 5.2. 오류 발생 시 해결 방법
-> 선택 사항, 자주 발생하는 오류 및 해결책 등
+### 3. 왜 YOLO26인가
 
-### 6. 소개 자료 및 시연 영상
-#### 6.1. 프로젝트 소개 자료
-> PPT 등
-#### 6.2. 시연 영상
-> 영상 링크 또는 주요 장면 설명
+본 연구에서는 RF-DETR, YOLO11, YOLO26 계열 모델의 검증 결과를 비교하였다. 현재 확보된 결과에서는 전체 mAP50과 human 클래스 mAP50을 공통 비교 지표로 확인할 수 있으며, 동일 장치에서의 FPS나 지연시간은 측정 자료가 없어 속도 우위를 정량적으로 비교하지 않았다. 최종 시스템에는 YOLO26n을 적용하였다.
+
+•	RF-DETR: 검증 결과 전체 mAP50 97.0%, human 클래스 88.0%를 기록하여 세 후보 중 가장 높은 정확도를 보였다. 다만 현재 자료에는 동일 장치 기준의 추론 속도 수치가 포함되어 있지 않으므로, 본 보고서에서는 RF-DETR의 실시간 처리 성능을 수치로 단정하지 않는다.
+
+•	YOLO11: 검증 결과 전체 mAP50 90.0%, human 클래스 55.0%를 기록하였다. 전체 성능은 최종 YOLO26n과 동일한 90.0%였으나, human 클래스 성능은 YOLO26n보다 낮게 나타났다.
+
+•	YOLO26n: 검증 결과 전체 mAP50 90.0%, human 클래스 58.0%를 기록하였다. 전체 mAP50은 YOLO11과 동일했으며, human 클래스에서는 YOLO11 대비 3%p 높은 결과를 확인하였다.
+
+
+### 4. 시스템 설계
+
+| 단계 | 입력 | 처리 | 출력 |
+|----|----|----|----|
+| 데이터 구축 | 웹 이미지, YOUTUBE 영상, Unity 이미지 | 수집·생성·정제·중복 제거 | 원본 및 정제 데이터 |
+| 라벨링 | 정제 이미지 | Roboflow Bounding Box 작성 및 검수	 | 이미지와 txt 라벨 |
+| 1단계 탐지 | 이미지/영상 프레임 | YOLO26n 추론 | 	big·middle·small·drone·human, confidence, Bounding Box |
+| 세부 분류 확장 | big·middle·small 함정 Bounding Box Crop | 별도 분류 단계 | 함정 세부 유형 또는 unknown |
+| 시각화 | 탐지·분류 결과 | 영상 결과 결합 및 UI 출력 |	탐지 영상과 요약 정보 |
+
+
+![정보융합공학과 이미지](https://user-images.githubusercontent.com/100384365/192478661-5dc79a18-b076-48ef-b842-bcf65b0d8d44.jpg)
+
+### 5. 데이터 구축
+
+본 연구는 데이터의 출처와 특성에 따라 함정 실사 데이터와 Unity 합성 데이터를 구분하여 확보한다.
+
+함정은 실제 외형을 반영하기 위해 해양경찰청 자료, 공개 이미지와 영상을 중심으로 수집하고, 드론과 사람은 원하는 거리·각도·기상 조건을 반복적으로 구성할 수 있는 Unity 데이터를 활용한다.
+
+이후 데이터를 정제하고 Roboflow에서 big, middle, small, drone, human의 최종 탐지 클래스 체계로 라벨링하여 YOLO26n 학습에 사용한다.
+
+| 대상 | 주요 데이터 출처 | 구축 방법 | 활용 목적 |
+|-----|-----------------|------------|----------|
+| 함정 |	해양경찰청 함정도감 | Google 이미지, YouTube 영상	실제 이미지 수집 및 영상 프레임 추출 | 실제 함정 외형과 다양한 시점 학습 |
+| 드론 | Unity 3D 모델 및 가상환경 | 거리·각도·기상별 합성 이미지 생성 | 해양 배경에서 부족한 드론 데이터 보완 |
+| 사람 | Unity 3D 모델 및 가상환경 | 부두·해안 배경에서 위치·거리 변화 | 해안 접근 상황의 사람 데이터 보완
+
+
+### 6. 연구 결과 분석
+
+아래의 평가항목을 기준으로 분석하였다.
+| 평가 항목 |	확인 결과 |
+|:---------:|----------|
+| YOLO26n 전체 검증 성능 | Validation Set: mAP@50 90.0%, Precision 92.9%, Recall 87.7%, F1 90.2% |
+| 클래스별 | AP@50	big 100%, middle 100%, small 99%, drone 93%, human 58% |
+| 후보 모델 비교 | 전체 mAP50: RF-DETR 97.0%, YOLO11 90.0%, YOLO26n 90.0% / human mAP50: 88.0%, 55.0%, 58.0% |
+| 환경별 시나리오 | Clear, Cloudy, Rain, Fog, Night 장면을 구성하여 정성적으로 확인 | 
+| 함정 세부 분류 | 함정 Crop 기반 세부 유형 분류 구조를 구성했으나 확정 모델명·정량 성능 수치는 현재 자료에 없어 미기재 |
+| 미산출 정량 항목 | mAP@0.5:0.95, 동일 장치 추론 시간/FPS, 기상 조건별 mAP는 현재 확보 자료에 수치가 없어 미기재 |
 
 ### 7. 팀 구성
-#### 7.1. 팀원별 소개 및 역할 분담
->
-#### 7.2. 팀원 별 참여 후기
-> 개별적으로 느낀 점, 협업, 기술적 어려움 극복 사례 등
 
-### 8. 참고 문헌 및 출처
+| 성명 | 담당 역할 | 주요 수행 내용 |
+|:----:|:--------:|----------------|
+| 김성윤 | 라벨링·YOLO26·함정 분류 구조 | Roboflow Bounding Box 라벨링 및 검수, 최종 클래스 구조 정리, YOLO26 학습·재학습과 성능평가, 오탐·미탐 분석, 함정 Crop 기반 세부 분류 구조 구성 |
+| 김윤지 | 함정 데이터·최종 시각화·문서화 | 	해양경찰청 함정도감 기반 실사 데이터 수집·정리, Google/YouTube 자료 조사와 영상 프레임 추출, 최종 모델 탐지 결과 시각화, Streamlit 관제형 UI 구성, 최종보고서 및 포스터 제작 |
+| 서연우 | Unity 합성 데이터 제작 | 포토그래메트리 기반 연안 가상환경 구성, 드론·사람 3D 모델 적용, Clear/Cloudy/Rain/Fog/Night Scene 구성, 거리·각도·위치별 합성 이미지 생성, 자동 캡처 및 파일명 관리, 합성 데이터 품질 검토 |
 
-```
+### 8. 참고 문헌
 
-## 5. README.md 작성팁 
-* 마크다운 언어를 이용해 README.md 파일을 작성할 때 참고할 수 있는 마크다운 언어 문법을 공유합니다.  
-* 다양한 예제와 보다 자세한 문법은 [이 문서](https://www.markdownguide.org/basic-syntax/)를 참고하세요.
+[1] J. H. Kim, N. Kim, Y. W. Park, and C. S. Won,
+“Object Detection and Classification Based on YOLO-V5 with Improved Maritime Dataset,”
+Journal of Marine Science and Engineering, vol. 10, no. 3, p. 377, 2022. DOI: 10.3390/jmse10030377.
 
-### 5.1. 헤더 Header
-```
-# This is a Header 1
-## This is a Header 2
-### This is a Header 3
-#### This is a Header 4
-##### This is a Header 5
-###### This is a Header 6
-####### This is a Header 7 은 지원되지 않습니다.
-```
-<br />
+[2] 해양경찰청, 「함정·항공기 도감」, 대한민국 국회도서관 소장자료.
 
-### 5.2. 인용문 BlockQuote
-```
-> This is a first blockqute.
->	> This is a second blockqute.
->	>	> This is a third blockqute.
-```
-> This is a first blockqute.
->	> This is a second blockqute.
->	>	> This is a third blockqute.
-<br />
+[3] L. A. Varga, B. Kiefer, M. Messmer, and A. Zell,
+“SeaDronesSee: A Maritime Benchmark for Detecting Humans in Open Water,” Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision, pp. 2260–2270, 2022.
 
-### 5.3. 목록 List
-* **Ordered List**
-```
-1. first
-2. second
-3. third  
-```
-1. first
-2. second
-3. third
-<br />
+[4] B. He, X. Li, B. Huang, E. Gu, W. Guo, and L. Wu,
+“UnityShip: A Large-Scale Synthetic Dataset for Ship Recognition in Aerial Images,” Remote Sensing, vol. 13, no. 24, p. 4999, 2021.
 
-* **Unordered List**
-```
-* 하나
-  * 둘
+[5] D. K. Prasad, D. Rajan, L. Rachmawati, E. Rajabally, and C. Quek,
+“Video Processing From Electro-Optical Sensors for Object Detection and Tracking in a Maritime Environment: A Survey,” IEEE Transactions on Intelligent Transportation Systems, vol. 18, no. 8, pp. 1993–2016, 2017.
 
-+ 하나
-  + 둘
-
-- 하나
-  - 둘
-```
-* 하나
-  * 둘
-
-+ 하나
-  + 둘
-
-- 하나
-  - 둘
-<br />
-
-### 5.4. 코드 CodeBlock
-* 코드 블럭 이용 '``'
-```
-여러줄 주석 "```" 이용
-"```
-#include <stdio.h>
-int main(void){
-  printf("Hello world!");
-  return 0;
-}
-```"
-
-단어 주석 "`" 이용
-"`Hello world`"
-
-* 큰 따움표(") 없이 사용하세요.
-``` 
-<br />
-
-### 5.5. 링크 Link
-```
-[Title](link)
-[부산대학교 정보컴퓨터공학부](https://cse.pusan.ac.kr/cse/index..do)
-
-<link>
-<https://cse.pusan.ac.kr/cse/index..do>
-``` 
-[부산대학교 정보컴퓨터공학부](https://cse.pusan.ac.kr/cse/index..do)
-
-<https://cse.pusan.ac.kr/cse/index..do>
-<br />
-
-### 5.6. 강조 Highlighting
-```
-*single asterisks*
-_single underscores_
-**double asterisks**
-__double underscores__
-~~cancelline~~
-```
-*single asterisks* <br />
-_single underscores_ <br />
-**double asterisks** <br />
-__double underscores__ <br />
-~~cancelline~~  <br />
-<br />
-
-### 5.7. 이미지 Image
-```
-<img src="image URL" width="600px" title="Title" alt="Alt text"></img>
-![Alt text](image URL "Optional title")
-```
-- 웹에서 작성한다면 README.md 내용 안으로 이미지를 드래그 앤 드롭하면 이미지가 생성됩니다.
-- 웹이 아닌 로컬에서 작성한다면, github issue에 이미지를 드래그 앤 드롭하여 image url 을 얻을 수 있습니다. (URL만 복사하고 issue는 제출 안 함.)
-  <img src="https://github.com/user-attachments/assets/0fe3bff1-7a2b-4df3-b230-cac4ef5f6d0b" alt="이슈에 image 올림" width="600" />
-  <img src="https://github.com/user-attachments/assets/251c6d42-b36b-4ad4-9cfa-fa2cc67a9a50" alt="image url 복사" width="600" />
+[6] Roboflow, “YOLO26 - Object Detection,” Inference Models Documentation, accessed 2026-09-07.
+URL: https://inference-models.roboflow.com/models/yolo26-object-detection/
 
 
-### 5.8. 유튜브 영상 추가
-```markdown
-[![영상 이름](유튜브 영상 썸네일 URL)](유튜브 영상 URL)
-[![부산대학교 정보컴퓨터공학부 소개](http://img.youtube.com/vi/zh_gQ_lmLqE/0.jpg)](https://www.youtube.com/watch?v=zh_gQ_lmLqE)    
-```
-[![부산대학교 정보컴퓨터공학부 소개](http://img.youtube.com/vi/zh_gQ_lmLqE/0.jpg)](https://www.youtube.com/watch?v=zh_gQ_lmLqE)    
+### 9. 소개 및 시연 영상
 
-- 이때 유튜브 영상 썸네일 URL은 유투브 영상 URL로부터 다음과 같이 얻을 수 있습니다.
-
-- `Youtube URL`: https://www.youtube.com/watch?v={동영상 ID}
-- `Youtube Thumbnail URL`: http://img.youtube.com/vi/{동영상 ID}/0.jpg 
-- 예를 들어, https://www.youtube.com/watch?v=zh_gQ_lmLqE 라고 하면 썸네일의 주소는 http://img.youtube.com/vi/zh_gQ_lmLqE/0.jpg 이다.
-
+[![부산대학교 정보컴퓨터공학부 소개](http://img.youtube.com/vi/zh_gQ_lmLqE/0.jpg)](https://youtu.be/1d5YcEO1V1U?si=tFSh4Ua90-TlaHVz)
