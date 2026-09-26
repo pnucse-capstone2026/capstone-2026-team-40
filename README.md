@@ -38,7 +38,7 @@
 | 시각화 | 탐지·분류 결과 | 영상 결과 결합 및 UI 출력 |	탐지 영상과 요약 정보 |
 
 
-![정보융합공학과 이미지](https://user-images.githubusercontent.com/100384365/192478661-5dc79a18-b076-48ef-b842-bcf65b0d8d44.jpg)
+![인터페이스 이미지]([https://user-images.githubusercontent.com/100384365/192478661-5dc79a18-b076-48ef-b842-bcf65b0d8d44.jpg](https://github.com/pnucse-capstone2026/capstone-2026-team-40/blob/42b526cb95799b6bb8e61b737bd05b534f9eff73/docs/04.%EC%9D%B4%EB%AF%B8%EC%A7%80%ED%8C%8C%EC%9D%BC/main_interface.png))
 
 ### 5. 데이터 구축
 
