@@ -1,3 +1,7 @@
+![인터페이스 이미지](docs/04.이미지파일/main_interface.png)
+
+---
+
 ### 1. 프로젝트 배경
 
 우리나라는 삼면이 바다로 둘러싸여 있으며 항만, 해수욕장, 연안 시설 등 넓은 해양·해안 영역에 대한 지속적인 감시가 요구된다. 특히 최근 소형 보트나 제트스키 등을 이용하여 해상으로 접근하거나 밀입국을 시도한 사례가 발생하면서, 기존의 선박뿐만 아니라 사람, 소형 수상기구, 드론 등 다양한 침투 가능 객체를 신속하게 탐지할 수 있는 감시 기술의 필요성이 증가하고 있다.
@@ -29,6 +33,8 @@
 
 ### 4. 시스템 설계
 
+![시스템 이미지](docs/04.이미지파일/System_Design_1.jpg)
+
 | 단계 | 입력 | 처리 | 출력 |
 |----|----|----|----|
 | 데이터 구축 | 웹 이미지, YOUTUBE 영상, Unity 이미지 | 수집·생성·정제·중복 제거 | 원본 및 정제 데이터 |
@@ -36,9 +42,6 @@
 | 1단계 탐지 | 이미지/영상 프레임 | YOLO26n 추론 | 	big·middle·small·drone·human, confidence, Bounding Box |
 | 세부 분류 확장 | big·middle·small 함정 Bounding Box Crop | 별도 분류 단계 | 함정 세부 유형 또는 unknown |
 | 시각화 | 탐지·분류 결과 | 영상 결과 결합 및 UI 출력 |	탐지 영상과 요약 정보 |
-
-
-![인터페이스 이미지](docs/04.이미지파일/main_interface.png)
 
 ### 5. 데이터 구축
 
@@ -66,6 +69,11 @@
 | 환경별 시나리오 | Clear, Cloudy, Rain, Fog, Night 장면을 구성하여 정성적으로 확인 | 
 | 함정 세부 분류 | 함정 Crop 기반 세부 유형 분류 구조를 구성했으나 확정 모델명·정량 성능 수치는 현재 자료에 없어 미기재 |
 | 미산출 정량 항목 | mAP@0.5:0.95, 동일 장치 추론 시간/FPS, 기상 조건별 mAP는 현재 확보 자료에 수치가 없어 미기재 |
+
+![성능평가_1 이미지](docs/04.이미지파일/Performance_Analysis_1.jpg)
+
+![성능평가_2 이미지](docs/04.이미지파일/Performance_Analysis_2.jpg)
+
 
 ### 7. 팀 구성
 
@@ -98,4 +106,4 @@ URL: https://inference-models.roboflow.com/models/yolo26-object-detection/
 
 ### 9. 소개 및 시연 영상
 
-[![부산대학교 정보컴퓨터공학부 소개](http://img.youtube.com/vi/zh_gQ_lmLqE/0.jpg)](https://youtu.be/1d5YcEO1V1U?si=tFSh4Ua90-TlaHVz)
+[![새우깡사이다_유튜브영상](docs/04.이미지파일/youtube_Thumbnail.jpg)](https://youtu.be/1d5YcEO1V1U?si=tFSh4Ua90-TlaHVz)
